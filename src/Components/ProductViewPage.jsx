@@ -11,6 +11,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import MapComponent from "./MapComponent";
+import { MdOutlineCall } from "react-icons/md";
 
 const ProductViewPage = () => {
   const [location, setLocation] = useState('');
@@ -126,19 +127,19 @@ const ProductViewPage = () => {
               <img src={data.img} alt="gg" className="w-full" />
             </div>
             <div className="mb-8 flex flex-col gap-6 ">
-              <h1 className="text-5xl font-bold w-[500px] h-fit">
+              <h1 className="text-4xl font-bold w-[500px] h-fit">
                 {data.desc}
               </h1>
               <p className="text-gray-600 text-4xl mt-2">
                 Price : {data.price}
               </p>
-              <p className="text-3xl font-semibold">
+              <p className="text-2xl font-semibold">
                 Posted On : {data.postedOn}
               </p>
-              <p className="text-3xl font-semibold">
+              <p className="text-2xl font-semibold">
                 Posted By : {data.postedBy}
               </p>
-              <p className="text-gray-600 text-3xl mt-2">
+              <p className="text-gray-600 text-2xl mt-2">
                 Quantity Remaining : {data.quantity}
               </p>
               <div className = "flex flex-row">
@@ -168,11 +169,15 @@ const ProductViewPage = () => {
           </div>
         </div>
         <div className="p-10 w-full h-fit flex justify-between items-center">
-          <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
+          <div className="w-[300px] rounded overflow-hidden shadow-lg bg-white">
             
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Contact Details</div>
-              <p className="text-gray-700 text-base">Phone Number : 9360412081 </p>
+              <div className="font-bold text-xl flex items-center justify-center mb-2">Contact Details</div>
+              <div className="flex items-center justify-center">
+              <MdOutlineCall className="w-8 h-8"/>
+              <p className="text-gray-700  font-semibold text-xxl"> 9360412081 </p>
+
+              </div>
               
             </div>
           </div>
@@ -189,9 +194,11 @@ const ProductViewPage = () => {
           </div>
           
         </div>
+        <div className="">
         {coordinates.lat && coordinates.lng && (
         <MapComponent coordinates={coordinates} location={data.address} />
       )}
+        </div>
       </div>
      
     </div>

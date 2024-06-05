@@ -43,25 +43,21 @@ const Buy = () => {
           'Content-type': 'application/json'
         }
       });
-      setData(response.data);
+      
+      const filteredData = response.data.filter(data => data.postedBy !== userId);
+    setFilteredData(filteredData);
     } catch (err) {
       console.log(err.message);
     }
+    
   };
 
-  const filterData = () => {
-    const filteredData = data.filter(data => data.postedBy !== userId);
-    setFilteredData(filteredData);
-  };
+  
 
   useEffect(() => {
     getData();
   }, []);
 
-  useEffect(() => {
-    filterData();
-    console.log(userId)
-  }, [data]);
 
   useEffect(() => {
     if (searchTerm === "") {

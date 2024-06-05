@@ -19,7 +19,7 @@ const MapComponent = ({ coordinates, location }) => {
       }
     );
 
-    window.addEventListener('resize', () => map.getViewPort().resize());
+    // window.addEventListener('resize', () => map.getViewPort().resize());
 
     const behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(map));
 
@@ -35,7 +35,7 @@ const MapComponent = ({ coordinates, location }) => {
 
   return (
     <div>
-      <div id="mapContainer" style={{ height: '400px', width: '100%' }}></div>
+      <div id="mapContainer" style={{ height: '400px', width: '100%' }} className=' w-full h- flex justify-center items-center'></div>
     </div>
   );
 };

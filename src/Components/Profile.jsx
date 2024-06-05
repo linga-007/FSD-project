@@ -151,9 +151,7 @@ const Profile = () => {
                 </nav>
                 <div className='flex justify-between sticky '>
                     <p className='font-semibold text-3xl mt-5'>Your Posts : </p>
-                    <div>
-                        <input type='date'></input>
-                    </div>
+                   
                 </div>
                 <div className="overflow-y-auto max-w-screen-xl whitespace-nowrap py-4 ">
                     <div className="flex space-x-4 px-4">
